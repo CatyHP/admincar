@@ -1,0 +1,199 @@
+<div class="content"  ng-controller="ModificaUCtrl">
+
+<div class="row contentBuscar">
+	<div class="col-lg-3 buscarLaterl">
+	Buscar
+	</div>
+	<div class="col-lg-9 sinPadding ">
+		<input class="buscarInput" type="text" name="">
+	</div>
+</div>
+
+<div class="row">
+<table class="table table-responsive tablaAqua">
+<thead>
+	<tr>
+	<th></th>
+	<th>Nombre</th>
+	<th>Ape. Paterno</th>
+	<th>Ape. Materno</th>
+	<th>Fecha Nac.</th>
+	<th>Autos</th>
+	</tr>
+</thead>
+<tbody ng-repeat="user in Users">
+
+<tr >
+        <td class="modifUsers">
+        <input id="boxDatosU{{user.id}}" type="checkbox" ng-model="item.users"/>
+        <label id="boxDatosU{{user.id}}" ng-class="{'iconosModificar-Active': item.users}" class="iconosModificar-Inactive"></label>
+        </td>
+        <td>
+        <input type="text" class="input-Inactive" id="nombre{{user.id}}" value="{{user.nombre}}" ng-class="{'input-Active': item.users}" >
+        </td>
+        <td><input type="text" class="input-Inactive"  id="apellidoP{{user.id}}" name="" value="{{user.apellidoP}}" ng-class="{'input-Active': item.users}"></td>
+        <td><input type="text" class="input-Inactive" id="apellidoM{{user.id}}" name="" value="{{user.apellidoM}}" ng-class="{'input-Active': item.users}"></td>
+        <td>
+        <input type="text" class="input-Inactive" id="fechaNac{{user.id}}" name="" value="{{user.fechaNac}}" ng-class="{'input-Active': item.users}">
+        <div class="row visible-false" ng-class="{'visible-true': item.users}">
+        <button value="{{user.id}}" class="botonAquaMini" ng-click="EditUsers(user.id)">Guardar</button>
+        <div class="row">
+        </td>
+        <td class="modifAutos"><input type="text" class="input-Inactive" name="" value="{{user.autos.length}}" > 
+
+         <input id="boxAutos{{user.id}}" type="checkbox" ng-model="item.autos"/>
+         <label id="boxAutos{{user.id}}" ng-class="{'iconosModificar-Active': item.autos}" class="iconosModificar-Inactive"></label>
+        </td>
+
+
+ </tr>
+
+ <tr class="visible-false" ng-class="{'visible-true': item.autos}" id="{{user.id}}">
+	<td colspan="6">
+		 <div class="row">
+        <div class="col-lg-3">
+         <label class="input__label " style="width: 100%" >
+            <span class="input__label-content input__label-content--yoshiko" >Marca</span>
+          </label>
+         <select id="marca{{user.id}}" class="input__field"  required="required">
+          <option>Ford</option>
+          <option>VW</option>
+          <option>Chevrolet</option>
+        </select>
+        </div>
+        <div class="col-lg-3">
+         <label class="input__label " style="width: 100%" >
+            <span class="input__label-content input__label-content--yoshiko" >Modelo</span>
+          </label>
+       <select id="modelo{{user.id}}" class="input__field"  required="required">
+        <option>Bocho</option>
+          <option>Beattle</option>
+          <option>Mustang</option>
+        </select>
+        </div>
+        <div class="col-lg-3">
+         <label class="input__label " style="width: 100%" >
+            <span class="input__label-content input__label-content--yoshiko" >Año</span>
+          </label>
+        <select id="anio{{user.id}}" class="input__field"  required="required">
+          <option>2017</option>
+          <option>1985</option>
+          <option>1999</option>
+        </select>
+        </div>
+        <div class="col-lg-3">
+         <label class="input__label " style="width: 100%" >
+            <span class="input__label-content input__label-content--yoshiko" >Color</span>
+          </label>
+       <select id="color{{user.id}}" class="input__field"  required="required">
+          <option>Azul</option>
+          <option>Rojo</option>
+          <option>Gris</option>
+          <option>Negro</option>
+        </select>
+        </div>
+        </div>
+        <div class="row col-lg-12">
+       <button class="botonAquaMini" ng-click="EditAutos(user.id)">Guardar</button>
+      </div>
+
+	</td>
+
+	</tr>
+
+	</tbody>
+
+<!---	<tr>
+	<td>
+		<i class="fa fa-pencil-square-o iconosModificar-Inactive" aria-hidden="true"></i>
+       <input type="text" class="input-Inactive" name="" value="Juan">
+	</td>
+	<td>
+		<input type="text" class="input-Inactive" name="" value="Perez">
+	</td>
+	<td> 
+        <input type="text" class="input-Inactive" name="" value="Perez">
+	</td>
+	<td> 
+        <input type="text" class="input-Inactive" name="" value="08/08/08">
+	</td>
+	<td> 
+	   <input type="text" class="input-Inactive" name="" value="2"> 
+	   <i class="fa fa-plus-circle iconosModificar-Active" aria-hidden="true"></i>
+
+	</td>
+	</tr>
+	<tr>
+	<td colspan="5">
+		 <div class="row">
+        <div class="col-lg-3">
+         <label class="input__label " style="width: 100%" >
+            <span class="input__label-content input__label-content--yoshiko" >Marca</span>
+          </label>
+        <select class="input__field">
+          
+        </select>
+        </div>
+        <div class="col-lg-3">
+         <label class="input__label " style="width: 100%" >
+            <span class="input__label-content input__label-content--yoshiko" >Modelo</span>
+          </label>
+        <select class="input__field">
+          
+        </select>
+        </div>
+        <div class="col-lg-3">
+         <label class="input__label " style="width: 100%" >
+            <span class="input__label-content input__label-content--yoshiko" >Año</span>
+          </label>
+        <select class="input__field">
+          
+        </select>
+        </div>
+        <div class="col-lg-3">
+         <label class="input__label " style="width: 100%" >
+            <span class="input__label-content input__label-content--yoshiko" >Color</span>
+          </label>
+        <select class="input__field">
+          
+        </select>
+        </div>
+        </div>
+        <div class="row col-lg-12">
+       <button class="botonAqua">Guardar</button>
+      </div>
+
+	</td>
+
+	</tr>
+
+   <tr>
+	<td>
+		<i class="fa fa-pencil-square-o iconosModificar-Active" aria-hidden="true"></i>
+		 <input type="text" class="input-Active" name="" value="Juan">
+	</td>
+	<td>
+		<input type="text" class="input-Active" name="" value="Perez">
+	</td>
+	<td> 
+        <input type="text" class="input-Active" name="" value="Perez">
+	</td>
+	<td> 
+        <input type="text" class="input-Active" name="" value="08/08/08">
+
+        <div class="row col-lg-12">
+       <button class="botonAqua">Guardar</button>
+      </div>
+	</td>
+	<td> 
+	   <input type="text" class="inputSinVista"  name="" value="2">
+	   <i class="fa fa-plus-circle iconosModificar-Inactive" aria-hidden="true"></i>
+	</td>
+	</tr>
+
+</tbody>
+-->
+</table>
+</div>
+
+</div>

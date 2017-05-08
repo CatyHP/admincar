@@ -1,0 +1,93 @@
+
+<div ng-controller="RegistroCtrl">
+<div class="content contetFormAltas" >
+
+        <h2>Datos Personales</h2>
+        <form>
+        <div class="row">
+        <span class="col-lg-3 input input--yoshiko">
+          <input class="input__field input__field--yoshiko" type="text" id="nombre" ng-model="nombre" required="required" />
+          <label class="input__label input__label--yoshiko" for="nombre">
+            <span class="input__label-content input__label-content--yoshiko" data-content="Nombre">Nombre</span>
+          </label>
+        </span>
+        <span class="col-lg-3 input input--yoshiko">
+          <input class="input__field input__field--yoshiko" type="text" id="ApePaterno" ng-model="apellidoP"  required="required"/>
+          <label class="input__label input__label--yoshiko" for="ApePaterno">
+            <span class="input__label-content input__label-content--yoshiko" data-content="Apellido Paterno">Apellido Paterno</span>
+          </label>
+        </span>
+
+         <span class="col-lg-3 input input--yoshiko">
+          <input class="input__field input__field--yoshiko" type="text" id="ApeMaterno" ng-model="apellidoM" required="required" />
+          <label class="input__label input__label--yoshiko" for="ApeMaterno">
+            <span class="input__label-content input__label-content--yoshiko" data-content="Apellido Materno">Apellido Materno</span>
+          </label>
+        </span>
+
+        <span class="col-lg-3 input input--yoshiko">
+          <input class="input__field input__field--yoshiko" type="text" id="fechaNaci" ng-model="fechaN" pattern="[0-9]{2}/[0-9]{2}/[0-9]{2}" required />
+          <label class="input__label input__label--yoshiko" for="fechaNaci">
+            <span class="input__label-content input__label-content--yoshiko" data-content="Fecha de nacimiento dd/mm/aa">Fecha de nacimiento dd/mm/aa</span>
+          </label>
+        </span>
+
+       
+        
+        </div>
+        
+      </div>
+
+      <div class="content contetFormAltas">
+      <h2>Autos</h2>
+        <div class="row">
+        <div class="col-lg-3">
+         <label class="input__label " style="width: 100%" >
+            <span class="input__label-content input__label-content--yoshiko" >Marca</span>
+          </label>
+        <select  class="input__field" ng-model="marca" required="required">
+          <option>Ford</option>
+          <option>VW</option>
+          <option>Chevrolet</option>
+        </select>
+        </div>
+        <div class="col-lg-3">
+         <label class="input__label " style="width: 100%"  >
+            <span class="input__label-content input__label-content--yoshiko" >Modelo</span>
+          </label>
+        <select class="input__field" ng-model="modelo" required="required">
+        <option>Bocho</option>
+          <option>Beattle</option>
+          <option>Mustang</option>
+        </select>
+        </div>
+        <div class="col-lg-3">
+         <label class="input__label " style="width: 100%" >
+            <span class="input__label-content input__label-content--yoshiko" >Año</span>
+          </label>
+        <select class="input__field" ng-model="anio" required="required">
+          <option>2017</option>
+          <option>1985</option>
+          <option>1999</option>
+        </select>
+        </div>
+        <div class="col-lg-3">
+         <label class="input__label " style="width: 100%" >
+            <span class="input__label-content input__label-content--yoshiko" >Color</span>
+          </label>
+        <select class="input__field" ng-model="color" required="required">
+          <option>Azul</option>
+          <option>Rojo</option>
+          <option>Gris</option>
+          <option>Negro</option>
+        </select>
+        </div>
+        </div>
+      </div>
+
+
+      <div class="row col-lg-12">
+       <input class="botonAqua" type="submit" ng-click="agregarUser()" value="Guardar" />
+       </form>
+      </div>
+<div>

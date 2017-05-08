@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>AdminCar</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/estilo_general.css">
+    <link rel="stylesheet" href="styles/estilo_header.css">
+    <link rel="stylesheet" href="styles/estilo_registroUser.css">
+    <link rel="stylesheet" href="styles/estilo_modificar.css">
+    <link rel="stylesheet" href="styles/font-awesome.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="admincarApp">
+    <!--[if lte IE 8]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Add your site or application content here -->
+    <header >
+      <nav  role="navigation">
+       <div class="miniMenu">
+        
+                <ul class="menuLateral ">
+                <li><a>Inicio</a></li>
+                <li><a>Admin</a></li>
+                <li><a>Cerrar sesión</a></li>
+                </ul>
+              </div>
+
+      
+
+        <div class="pater">
+          <svg class="pater__svg" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 280 800" data-path-hover="M 0,0 280,0 280,800 0,800 Z">
+            <clipPath id="pater-clip">
+              <path d="M 0,0 280,0 0,400 0,800 Z" overflow="visible"/>
+            </clipPath>
+            <g class="pater__clip" clip-path="url(#pater-clip)">
+              <image overflow="visible" width="100%" height="100%" preserveAspectRatio="xMinYMin slice" xlink:href="images/header/bg.jpg"></image>
+            </g>
+          </svg>
+          <div class="pater__content">
+            <img class="pater__logo" src="images/header/logo.png" alt="Jupiter Logo" />
+             <span class="fa-stack fa-lg">
+               <i class="fa fa-circle fa-stack-2x"></i>
+               <i class="fa fa-bars fa-stack-1x fa-inverse"></i>
+             </span>
+            <div class="pater__hover">
+
+              <div>
+                <ul class="menuLateral">
+                <li><a>Inicio</a></li>
+                <li><a>Admin</a></li>
+                <li><a>Cerrar sesión</a></li>
+              </div>
+
+              <div>**Recuerda que estamos corriendo la bersión BETA, si tienes algún porblema
+              comunicate con tu adminstrador.***</div>
+             
+           
+           
+         
+          </div>
+        </div>
+       
+      </nav>
+
+<section class="container contenBtnsAcciones">
+
+<ul class="BtnsAcciones">
+<li>
+<i class="fa fa-id-card" aria-hidden="true" > </i> 
+<div class="contTextoBtnsAcciones">
+<a ng-href="#/" >Registrar Usuario</a>
+</div>
+
+</li>
+<li> 
+<i class="fa fa-car" aria-hidden="true"> </i>
+<div class="contTextoBtnsAcciones">
+<a ng-href="#/modificar">Actualizar Usuario</a>
+</div>
+</li>
+<li>
+<i class="fa fa-users" aria-hidden="true"> </i>
+<div class="contTextoBtnsAcciones">
+<a ng-href="/#modificauto">Modificar Auto</a>
+</div>
+</li>
+</ul>
+
+</section>
+
+    </header>
+
+    <section class="container">
+    
+    <section ng-view>
+      
+    </section>
+
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <p>AdminCar Version Beta. Rev.1</p>
+      </div>
+    </footer>
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+     <script>
+       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
+       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
+       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
+       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+       ga('create', 'UA-XXXXX-X');
+       ga('send', 'pageview');
+    </script>
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
+           <script src="scripts/factory.js"></script>
+        <script src="scripts/controllers/registro.js"></script>
+        <script src="scripts/controllers/modificaUser.js"></script>
+        <!-- endbuild -->
+
+        <!-- Animaciones -->
+        <script src="scripts/header/anime.min.js"></script>
+        <script>
+    (function() {
+
+   
+      // REMOVE THIS!
+      // For Demo purposes only. Prevent the click event.
+      [].slice.call(document.querySelectorAll('a[href="#"]')).forEach(function(el) {
+        el.addEventListener('click', function(ev) { ev.preventDefault(); });
+      });
+
+      var pater = document.querySelector('.pater'),
+        paterSVG = pater.querySelector('.pater__svg'),
+        pathEl = paterSVG.querySelector('path'),
+        paths = {default: pathEl.getAttribute('d'), active: paterSVG.getAttribute('data-path-hover')};
+
+      pater.addEventListener('mouseenter', function() {
+        anime.remove(pathEl);
+        anime({
+          targets: pathEl,
+          d: paths.active,
+          duration: 400,
+          easing: 'easeOutQuad'
+        });
+      });
+
+      pater.addEventListener('mouseleave', function() {
+        anime.remove(pathEl);
+        anime({
+          targets: pathEl,
+          d: paths.default,
+          duration: 400,
+          easing: 'easeOutExpo'
+        });
+      });
+    })();
+    </script>
+
+</body>
+</html>

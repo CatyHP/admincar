@@ -1,0 +1,39 @@
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+    
+  }
+}
+@media (min-width: 890px) {
+
+  .miniMenu{
+    display: block;
+  }
+}
+@media (min-width: 891px) {
+  .container {
+    width: 750px;
+    margin-left: 250px  !important;
+  }
+  .miniMenu{
+    display: none;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+    margin-left: 250px  !important;
+  }
+  .miniMenu{
+    display: none;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1000px  !important;
+    margin-left: 250px  !important;
+  }
+  .miniMenu{
+    display: none;
+  }
+}
